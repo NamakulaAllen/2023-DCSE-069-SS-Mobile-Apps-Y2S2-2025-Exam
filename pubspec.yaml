@@ -63,6 +63,11 @@ flutter:
     - assets/images/toall.jpg
     - assets/images/babydriver.jpg
     - assets/images/john.png
+    - assets/images/jumangi.jpg
+    - assets/images/birds.jpg
+    - assets/images/topgun.jpg
+    - assets/images/redsparrow.jpg
+    - assets/images/avoto.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

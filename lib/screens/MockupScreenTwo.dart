@@ -1,11 +1,33 @@
 import 'package:flutter/material.dart';
 
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Movie App',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        brightness: Brightness.light,
+        scaffoldBackgroundColor: Colors.white,
+      ),
+      home: const MockupScreenTwo(),
+    );
+  }
+}
+
 class MockupScreenTwo extends StatelessWidget {
   const MockupScreenTwo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -18,12 +40,17 @@ class MockupScreenTwo extends StatelessWidget {
               child: Stack(
                 children: [
                   Image.asset(
-                    'assets/images/John.png',
+                    'assets/images/jumangi.jpg',
                     width: double.infinity,
                     height: 400,
                     fit: BoxFit.cover,
+                    errorBuilder:
+                        (context, error, stackTrace) => Container(
+                          color: Colors.grey[300],
+                          height: 400,
+                          child: const Icon(Icons.error, color: Colors.red),
+                        ),
                   ),
-
                   Container(
                     height: 400,
                     decoration: BoxDecoration(
@@ -37,7 +64,6 @@ class MockupScreenTwo extends StatelessWidget {
                       ),
                     ),
                   ),
-
                   Positioned(
                     bottom: 40,
                     left: 0,
@@ -57,19 +83,13 @@ class MockupScreenTwo extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 8),
-
-                        // Make categories more visible with improved styling
                         Container(
                           padding: const EdgeInsets.symmetric(
                             horizontal: 12,
                             vertical: 6,
                           ),
-                          decoration: BoxDecoration(
-                            color: Colors.black54,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
                           child: const Text(
-                            'Action • Adventure • Comedy',
+                            'Action • Adventure • Comedy • Fantasy',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Colors.white,
@@ -86,13 +106,12 @@ class MockupScreenTwo extends StatelessWidget {
             ),
             const SizedBox(height: 24),
 
-            // Popular Movies Section
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Text(
                 'Whats Popular',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
@@ -107,22 +126,22 @@ class MockupScreenTwo extends StatelessWidget {
                 children: const [
                   MovieCard(
                     title: 'Birds of Prey',
-                    imageAsset: 'assets/movie1.jpg',
+                    imageAsset: 'assets/images/birds.jpg',
                     rating: 8.5,
                   ),
                   MovieCard(
                     title: 'Red Sparrow',
-                    imageAsset: 'assets/movie2.jpg',
+                    imageAsset: 'assets/images/redsparrow.jpg',
                     rating: 8.2,
                   ),
                   MovieCard(
                     title: 'Avatar 2',
-                    imageAsset: 'assets/movie3.jpg',
+                    imageAsset: '- assets/images/avoto.png',
                     rating: 7.9,
                   ),
                   MovieCard(
                     title: 'Top Gun: Maverick',
-                    imageAsset: 'assets/movie4.jpg',
+                    imageAsset: '- assets/images/topgun.jpg',
                     rating: 8.7,
                   ),
                 ],
@@ -136,7 +155,7 @@ class MockupScreenTwo extends StatelessWidget {
               child: Text(
                 'Now Playing',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
@@ -150,23 +169,23 @@ class MockupScreenTwo extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 children: const [
                   MovieCard(
-                    title: 'To All Boys:P.S.I still Love you',
-                    imageAsset: 'assets/movie5.jpg',
+                    title: 'To All Boys: P.S. I still Love you',
+                    imageAsset: 'assets/images/toall.jpg',
                     rating: 9.0,
                   ),
                   MovieCard(
-                    title: 'Ford and ferrari',
-                    imageAsset: 'assets/exit.jpg',
+                    title: 'Ford and Ferrari',
+                    imageAsset: 'assets/images/toall.jpg',
                     rating: 7.5,
                   ),
                   MovieCard(
                     title: 'Mission: Impossible',
-                    imageAsset: 'assets/exit.jpg',
+                    imageAsset: 'assets/images/exit.jpg',
                     rating: 8.3,
                   ),
                   MovieCard(
                     title: 'Guardians Vol.3',
-                    imageAsset: 'assets/exit.jpg',
+                    imageAsset: 'assets/images/toall.jpg',
                     rating: 8.1,
                   ),
                 ],
@@ -175,13 +194,12 @@ class MockupScreenTwo extends StatelessWidget {
 
             const SizedBox(height: 24),
 
-            // Recommended Section
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Text(
                 'Recommended for You',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
@@ -196,22 +214,22 @@ class MockupScreenTwo extends StatelessWidget {
                 children: const [
                   MovieCard(
                     title: 'Inception',
-                    imageAsset: 'assets/movie9.jpg',
+                    imageAsset: 'assets/images/toall.jpg',
                     rating: 8.8,
                   ),
                   MovieCard(
                     title: 'The Dark Knight',
-                    imageAsset: 'assets/movie10.jpg',
+                    imageAsset: 'assets/images/toall.jpg',
                     rating: 9.1,
                   ),
                   MovieCard(
                     title: 'Tenet',
-                    imageAsset: 'assets/movie11.jpg',
+                    imageAsset: 'assets/images/toall.jpg',
                     rating: 7.8,
                   ),
                   MovieCard(
                     title: 'Joker',
-                    imageAsset: 'assets/movie12.jpg',
+                    imageAsset: 'assets/images/toall.jpg',
                     rating: 8.4,
                   ),
                 ],
@@ -222,7 +240,6 @@ class MockupScreenTwo extends StatelessWidget {
           ],
         ),
       ),
-      // Bottom navigation bar removed as requested
     );
   }
 }
@@ -247,10 +264,8 @@ class MovieCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Movie Poster with Rating
           Stack(
             children: [
-              // Movie Poster with Rounded Corners
               ClipRRect(
                 borderRadius: BorderRadius.circular(16),
                 child: Image.asset(
@@ -258,12 +273,18 @@ class MovieCard extends StatelessWidget {
                   height: 180,
                   width: 140,
                   fit: BoxFit.cover,
+                  errorBuilder:
+                      (context, error, stackTrace) => Container(
+                        height: 180,
+                        width: 140,
+                        color: Colors.grey[300],
+                        child: const Icon(Icons.error, color: Colors.red),
+                      ),
                 ),
               ),
-              // Rating Circle
               Positioned(
                 right: 8,
-                top: 8,
+                bottom: 9,
                 child: Container(
                   width: 36,
                   height: 36,
@@ -286,13 +307,12 @@ class MovieCard extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 8),
-          // Movie Title
           Text(
             title,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: const TextStyle(
-              color: Colors.white,
+              color: Colors.black,
               fontSize: 14,
               fontWeight: FontWeight.w500,
             ),
