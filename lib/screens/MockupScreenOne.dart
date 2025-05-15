@@ -82,7 +82,6 @@ class _MockupScreenState extends State<MockupScreenOne> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    // TMDB Logo
                     Container(
                       padding: const EdgeInsets.symmetric(
                         horizontal: 10,
@@ -102,7 +101,6 @@ class _MockupScreenState extends State<MockupScreenOne> {
                       ),
                     ),
 
-                    // Search and Sort/Filter
                     Row(
                       children: [
                         const Icon(Icons.search, color: Colors.white),
@@ -145,7 +143,6 @@ class _MockupScreenState extends State<MockupScreenOne> {
 
                 const SizedBox(height: 20),
 
-                // Discover and Enjoy text
                 const Text(
                   "Discover & Enjoy",
                   style: TextStyle(
@@ -162,7 +159,6 @@ class _MockupScreenState extends State<MockupScreenOne> {
             ),
           ),
 
-          // Categories
           Container(
             height: 50,
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -275,7 +271,6 @@ class _MockupScreenState extends State<MockupScreenOne> {
 
                               const SizedBox(height: 4),
 
-                              // Year and duration
                               Text(
                                 "${movie['year']} • ${movie['duration']}",
                                 style: TextStyle(
@@ -286,7 +281,6 @@ class _MockupScreenState extends State<MockupScreenOne> {
 
                               const SizedBox(height: 4),
 
-                              // Genre
                               Text(
                                 movie['genre'],
                                 style: TextStyle(
@@ -321,7 +315,6 @@ class _MockupScreenState extends State<MockupScreenOne> {
         ],
       ),
 
-      // Bottom Navigation Bar
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: (index) {
