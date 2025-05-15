@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # android_exam
 
 A new Flutter project.
@@ -14,3 +15,6 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+=======
+# 2023-DCSE-069-SS-Mobile-Apps-Y2S2-2025-Exam
+>>>>>>> 9439c0f1e929768bd92d8396f9305c5a997bce39
